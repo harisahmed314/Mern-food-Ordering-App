@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Layout from "./layouts/layout";
-import HomePage from "./components/ui/HomePage";
+import HomePage from "./pages/HomePage";
 
 
 const AppRoutes = () => {
