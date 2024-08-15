@@ -7,17 +7,15 @@ type CreateUserRequest = {
   auth0Id: string;
   email: string;
 };
-
 export const useCreateMyUser = () => {
   const { getAccessTokenSilently } = useAuth0();
 
-  const createUserRequest = async (user: CreateUserRequest) => {
+  const createMyUserRequest = async (user: CreateUserRequest) => {
     const accessToken = await getAccessTokenSilently();
-    
     const response = await fetch(`${API_BASE_URL}/api/my/user`, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${accessToken}`, // Use backticks for string interpolation
+        Authorization: `Bearer ${accessToken}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
@@ -33,7 +31,7 @@ export const useCreateMyUser = () => {
     isLoading,
     isError,
     isSuccess,
-  } = useMutation(createUserRequest);
+  } = useMutation(createMyUserRequest);
 
   return {
     createUser,
