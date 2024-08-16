@@ -9,7 +9,7 @@ const AppRoutes = () => {
   return (
    <Routes>
 
-     <Route path="/" element={<Layout><HomePage/></Layout>}/>
+     <Route path="/" element={<Layout showHero={true}><HomePage/></Layout>}/>
      <Route path="/auth-callback" element={<AuthCallbackPage/>}/>
      <Route path="/user-profile" element={<Layout><UserProfilePage/></Layout>}/>
      <Route path="*" element={<Navigate to="/"/>}/>
